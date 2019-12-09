@@ -1,0 +1,42 @@
+//Border-Radius
+@mixin border-radius($radius) {
+    @each $vendor in $vendors {
+        #{$vendor}border-radius: $radius;
+    }
+}
+
+//Box-Shadow
+@mixin box-shadow($x, $y, $blur, $spread, $color, $inset :false) {
+    @if $inset {
+        @each $vendor in $vendors {
+            #{$vendor}box-shadow: inset $x, $y, $blur, $color;
+        }
+    }
+
+    @else {
+        @each $vendor in $vendors {
+            #{$vendor}box-shadow: $x $y $blur $spread $color;
+        }
+    }
+}
+
+//Backround-Image
+@mixin background-img($url, $bgSize, $bgPosition, $bgRepeat:no-repeat) {
+    background-image: url($url);
+    background-size: $bgSize;
+    background-position: $bgPosition;
+    background-repeat: $bgRepeat;
+}
+
+//Linear-Gradient
+@mixin linear-gradient($direction, $from, $to) {
+    background: -webkit-linear-gradient($direction, $from 0%, $to 100%);
+    background: -moz-linear-gradient($direction, $from 0%, $to 100%);
+    background: -o-linear-gradient($direction, $from 0%, $to 100%);
+    background: linear-gradient($direction, $from 0%, $to 100%);
+}
+
+//Line Height -> Golden Ratio
+@mixin line-height($size) {
+    line-height: $size * 1.618;
+}

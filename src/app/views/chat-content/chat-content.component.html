@@ -1,0 +1,111 @@
+<div *ngIf="account">
+  <header class="p-3">
+    <div class="row no-gutters align-items-center">
+      <div class="col-1">
+        <img [src]="account.image" width="70px" alt="" />
+      </div>
+      <div class="col-2">
+        <h6>{{ account.name }}</h6>
+        <p class="mb-0">No Pain .... No Gain</p>
+        <div>
+          <div class="status mr-1" [ngClass]="account.status"></div>
+          <span class="green" *ngIf="account.status == 'active'">online</span>
+          <span class="grey" *ngIf="account.status != 'active'">offline</span>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <!-- <img class="menu mr-3" src="../../../assets/images/menu.svg" alt="" /> -->
+
+        <button mat-button class="transparent-btn" [matMenuTriggerFor]="menu">
+          <mat-icon class="more">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="mute(account)">Mute</button>
+          <button mat-menu-item (click)="archive(account)">Archive</button>
+          <button mat-menu-item (click)="delete(account)">Delete</button>
+        </mat-menu>
+      </div>
+    </div>
+  </header>
+  <div class="p-3 body-content">
+    <div class="row no-gutters">
+      <div class="col-1 mr-3 p-0">
+        <img [src]="account.image" width="70px" alt="" />
+      </div>
+      <div class="col">
+        <div class="parent">
+          <div class="arrow"></div>
+          <div class="meesage w-50 d-flex justify-content-between">
+            <span>Are you there ?</span>
+            <span class="time">12:00 am</span>
+          </div>
+          <div class="meesage d-flex justify-content-between mt-2 w-75">
+            <span>I tried to call you yesterday but I was so busy</span>
+            <span class="float-right time">12:00 am</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters mt-2" dir="rtl">
+      <div class="col-1 ml-3 p-0">
+        <img
+          src="../../../assets/images/0.png"
+          class="circle"
+          width="70px"
+          alt=""
+        />
+      </div>
+      <div class="col">
+        <div class="parent">
+          <div class="arrow-white"></div>
+          <div class="meesage-white w-50 d-flex justify-content-between">
+            <span>Hi Hassan</span>
+            <div dir="ltr">
+              <span class="time">12:00 am</span>
+            </div>
+          </div>
+          <div class="meesage-white d-flex justify-content-between mt-2 w-75">
+            <span>I tried to call you yesterday but I was so busy</span>
+            <div dir="ltr">
+              <span class="time">12:00 am</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5" id="action">
+      <span>Hassan is typing ...</span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button
+            class="btn"
+            type="button"
+            id="button-addon1"
+          >
+            <mat-icon>attachment</mat-icon>
+          </button>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder=""
+          aria-label="Example text with button addon"
+          aria-describedby="button-addon1"
+          placeholder="type your message ..."
+          (keyup.enter)="sendMessage(message)"
+          #message
+        />
+        <div class="input-group-append">
+          <button
+            class="btn blue"
+            type="button"
+            id="button-addon2"
+            (click)="sendMessage(message)"
+          >
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

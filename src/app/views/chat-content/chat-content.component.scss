@@ -1,0 +1,167 @@
+@import '../../../assets/scss/_variables';
+@import '../../../assets/scss/_mixins';
+
+header {
+    background: #ffffff;
+
+    h6 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+}
+
+.status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active {
+    background: #3dd03d;
+}
+
+.inactive {
+    background: gray;
+}
+
+.green {
+    color: #3dd03d;
+}
+
+.grey {
+    color: gray;
+}
+
+.menu {
+    width: 5%;
+    //  color: rgba(1, 105, 180, 1);
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 44px 31px 0;
+    border-color: transparent #007bff transparent transparent;
+    position: absolute;
+    left: -2%;
+}
+
+.meesage {
+    background: #007bff;
+    border-radius: 7px;
+    padding: 15px;
+    z-index: 999;
+    position: relative;
+
+    span {
+        color: #ffffff;
+    }
+
+    .time {
+        opacity: .5;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.meesage-white {
+    background: #ffffff;
+    border-radius: 7px;
+    padding: 15px;
+    z-index: 9999;
+    position: relative;
+
+    span {
+        color: #000;
+    }
+
+    .time {
+        opacity: .5;
+    }
+}
+
+.arrow-white {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 44px 31px 0;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    transform: rotateY(180deg);
+    left: 97%;
+}
+
+.btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 13px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    mat-icon {
+        color: gray;
+    }
+}
+
+.blue {
+    background: #007bff;
+
+    mat-icon {
+        color: #ffffff;
+    }
+}
+
+#action {
+    position: absolute;
+    bottom: 5%;
+    width: 95%;
+}
+
+.form-control {
+    padding: 25px 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    &:focus {
+        box-shadow: none;
+        border-color: transparent;
+    }
+}
+
+.more {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 50px;
+    margin-right: 38px;
+    height: auto;
+}
+
+.transparent-btn {
+    background: none;
+    border: 0;
+    outline: 0 !important;
+}
+
+.mat-menu-panel {
+    background: #ffffff !important;
+    outline: 0;
+
+    button {
+        color: #000;
+        outline: 0;
+
+    }
+}
+
+.swal2-container.swal2-center {
+    z-index: 9999;
+}
